@@ -3,7 +3,9 @@ import MenuBar from './components/MenuBar'
 
 export default function App() {
   return(
-    <MenuBar/>
+    <div>
+      <MenuBar siteTitle={process.env.REACT_APP_SITE_TITLE} />
+    </div>
   );
 }
 
