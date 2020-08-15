@@ -10,7 +10,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
-    position: "fixed"
+
   },
   brand: {
     color: `#fff`,
@@ -26,19 +26,22 @@ const useStyles = makeStyles({
   },
   icon: {
     color: '#fff'
+  },
+  appBar:{
+    position: "absolute",
   }
 });
 
-const MenuBar = ({siteTitle}) => {
+const MenuBar = ({siteTitle, onButtonClick}) => {
   const classes = useStyles();
 
   return (
     <>
        <div className={classes.root}>
-       <AppBar color="transparent" elevation={0}>
+       <AppBar className={classes.appBar} color="transparent" elevation={0}>
           <Container maxWidth="lg">
             <Toolbar> 
-              <Typography variant="h5">
+              <Typography variant="h4">
                 <Link
                   to="/"
                   className={classes.brand}
@@ -46,8 +49,8 @@ const MenuBar = ({siteTitle}) => {
                   {siteTitle}
                 </Link>
               </Typography>
-              <Button component={Link} to="/" className={classes.navButton}>Home</Button>
-              <Button component={Link} to="/products" className={classes.navButton}>Products</Button>
+              <Button size="large" onClick={() => {onButtonClick('Home')}}  component={Link} to="/" className={classes.navButton}>Home</Button>
+              <Button size="large" onClick={() => {onButtonClick('Products')}} component={Link} to="/products" className={classes.navButton}>Products</Button>
               <Typography className={classes.flex}></Typography>
               <IconButton className={classes.icon}><InstagramIcon/></IconButton>
               <IconButton className={classes.icon}><FacebookIcon/></IconButton>
