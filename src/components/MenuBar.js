@@ -10,6 +10,7 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 const useStyles = makeStyles({
   root: {
     flexGrow: 1,
+    position: "fixed"
   },
   brand: {
     color: `#fff`,
@@ -35,7 +36,7 @@ const MenuBar = ({siteTitle}) => {
     <>
        <div className={classes.root}>
        <AppBar color="transparent" elevation={0}>
-          <Container maxWidth="md">
+          <Container maxWidth="lg">
             <Toolbar> 
               <Typography variant="h5">
                 <Link

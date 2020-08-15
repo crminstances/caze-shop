@@ -1,5 +1,6 @@
 import React from "react"
 import MenuBar from "../components/MenuBar"
+
 import Footer from "../components/Footer"
 import { ThemeProvider, createMuiTheme } from "@material-ui/core";
 import {mainRoutes} from '../routes';
@@ -12,7 +13,7 @@ const useStyles = makeStyles({
     flexGrow: 1,
   },
   media: {
-    height: 700,
+    height: 800,
   },
 });
 
@@ -24,7 +25,21 @@ const Layout = () => {
      "fontSize": 14,
      "fontWeightRegular": 400,
      "fontWeightBold": 700
-    }
+    },
+    palette: {
+      primary: {
+        light: '#000',
+        main: '#000',
+        dark: '#fff',
+        contrastText: '#fff',
+      },
+      secondary: {
+        light: '#fff',
+        main: '#fff',
+        dark: '#000',
+        contrastText: '#000',
+      }
+    },
   });
 
   const classes = useStyles();
@@ -38,7 +53,8 @@ const Layout = () => {
             className={classes.media}
             image={headerImage}
             alt="Header Image"
-          />
+          ></CardMedia>
+          
         </Card>
         <div>
           <main>
