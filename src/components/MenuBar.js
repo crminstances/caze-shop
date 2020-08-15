@@ -1,11 +1,7 @@
 import React from 'react';
 import PropTypes from "prop-types"
-import { routes } from '../routes';
 import {
-  BrowserRouter as Router,
-  Switch,
-  Link,
-  Route
+  Link
 } from "react-router-dom";
 import { Toolbar, AppBar, Typography, makeStyles, Container, Button, IconButton} from "@material-ui/core";
 import InstagramIcon from '@material-ui/icons/Instagram';
@@ -36,7 +32,7 @@ const MenuBar = ({siteTitle}) => {
   const classes = useStyles();
 
   return (
-    <Router>
+    <>
        <div className={classes.root}>
        <AppBar color="transparent" elevation={0}>
           <Container maxWidth="md">
@@ -59,22 +55,7 @@ const MenuBar = ({siteTitle}) => {
           </Container>
         </AppBar>
       </div>
-
-      <Switch>
-        {routes.map((route, i) => {
-          return (
-            <Route
-              key={i}
-              path={route.path}
-              render={props => (
-                // pass the sub-routes down to keep nesting
-                <route.component {...props} routes={route.routes} />
-              )}
-            />
-          );
-        })}
-      </Switch>
-    </Router>
+    </>
   );
 }
 
