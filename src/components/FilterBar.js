@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import { Toolbar, AppBar, Typography, makeStyles, Container, Button, IconButton} from "@material-ui/core";
+import {Toolbar, AppBar, Typography, makeStyles, Container, Button} from "@material-ui/core";
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
@@ -32,9 +32,13 @@ const useStyles = makeStyles({
     },
   });
 
-const MenuBar = ({ children }) => {
+const FilterBar = ({ children, page }) => {
     const classes = useStyles();
     const [value, setValue] = React.useState(0);
+    // const [page, setPage] = React.useState("Home");
+    // const changePageTitle = (title = "Home") => {
+    //   setPage(title);
+    // }
 
     function a11yProps(index) {
         return {
@@ -46,8 +50,11 @@ const MenuBar = ({ children }) => {
     <>
         <Container maxWidth="lg">
             <Grid container spacing={1}>
-                <Grid item md={2} sm={2} xs={2}>
-                    <div className={classes.tabs}>
+                <Grid item md={2} sm={3} xs={3}>
+                  <div className={classes.tabs}>
+                    <Typography variant="h4" component="p">
+                      {page}
+                    </Typography>
                     <Tabs
                         orientation="vertical"
                         variant="scrollable"
@@ -65,9 +72,9 @@ const MenuBar = ({ children }) => {
                         <Tab className={classes.label} label="Carry" {...a11yProps(5)} />
                     </Tabs>
 
-                    </div>
+                  </div>
                 </Grid>
-                <Grid item md={10} sm={10} xs={10}>
+                <Grid item md={10} sm={9} xs={9}>
                  <AppBar color="secondary" className={classes.root}>
                         <Toolbar>
                             <Typography>Filter: </Typography>
@@ -86,4 +93,4 @@ const MenuBar = ({ children }) => {
   );
 }
 
-export default MenuBar;
+export default FilterBar;

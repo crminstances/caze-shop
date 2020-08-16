@@ -1,14 +1,7 @@
 import React from "react";
 import FilterBar from "../components/FilterBar"
 import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Typography from '@material-ui/core/Typography';
-import sampleImage from '../assets/sample-product.jpg';
-import Grid from '@material-ui/core/Grid';
+import {Grid, Card, CardActionArea, CardContent, CardMedia, Typography} from '@material-ui/core';
 
 const useStyles = makeStyles({
   root: {
@@ -22,15 +15,17 @@ const useStyles = makeStyles({
 });
 
 const content = (classes) => {
-  let cards = [0,1,2,3,4,5,6,7,8,9,10,11]
+  let cards = [1,2,3,4,5,6,7,8,9,10,11,12]
+  let prod
   return cards.map((card, key) => {
+    prod = card % 3 === 0 ? 3 : card % 3
     return (
       <Grid item lg={4} sm={12} key={key}>
         <Card className={classes.root}>
         <CardActionArea>
           <CardMedia
             className={classes.media}
-            image={sampleImage}
+            image={`../images/p${prod}.jpg`}
             title="Contemplative Reptile"
           />
           <CardContent>
@@ -53,7 +48,7 @@ const Home = () => {
   const classes = useStyles();
   return (
     <>
-      <FilterBar>
+      <FilterBar page="Home">
         <Grid container spacing={2}>
           {content(classes)}
         </Grid>

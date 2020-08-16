@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import {
   Link
 } from "react-router-dom";
-import { Toolbar, AppBar, Typography, makeStyles, Container, Button, IconButton} from "@material-ui/core";
+import { Toolbar, AppBar, Typography, makeStyles, Container, Button} from "@material-ui/core";
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 
@@ -52,11 +52,11 @@ const MenuBar = ({siteTitle, onButtonClick}) => {
                 </Link>
                 </Typography>
               <Typography className={classes.flex} variant="h4" component="p">
-                <Button size="large" onClick={() => {onButtonClick('Home')}}  component={Link} to="/" className={classes.navButton}>Home</Button>
-              <Button size="large" onClick={() => {onButtonClick('Products')}} component={Link} to="/products" className={classes.navButton}>Products</Button>
+                <Button size="large" component={Link} to="/" className={classes.navButton}>Home</Button>
+              <Button size="large" component={Link} to="/products" className={classes.navButton}>Products</Button>
               </Typography>
-              <IconButton className={classes.icon}><InstagramIcon/></IconButton>
-              <IconButton className={classes.icon}><FacebookIcon/></IconButton>
+              <Button href="https://instagram.com/golds.caze" target="_blank" className={classes.icon}><InstagramIcon/></Button>
+              <Button href="https://www.facebook.com/gold.caze" target="_blank" className={classes.icon}><FacebookIcon/></Button>
 
             </Toolbar>
           </Container>
