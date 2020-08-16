@@ -26,7 +26,6 @@ const content = (classes) => {
           <CardMedia
             className={classes.media}
             image={`../images/p${prod}.jpg`}
-            title="Contemplative Reptile"
           />
           <CardContent>
             <Typography variant="body2" color="textSecondary" component="p">
