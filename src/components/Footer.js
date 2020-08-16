@@ -6,7 +6,7 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
-import Fab from '@material-ui/core/Fab';
+
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -45,9 +45,9 @@ const Footer = () => {
     
     return(
       <>
-        <Fab color="primary" size="large" className={classes.absolute}>
+        {/* <Fab color="primary" size="large" className={classes.absolute}>
           <InstagramIcon/>
-        </Fab>
+        </Fab> */}
         <div className={classes.spacer}>
           <Typography variant="h4" color="textPrimary" component="p">
             Is simply dummy text of the printing and typesetting industry.
