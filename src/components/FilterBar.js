@@ -1,6 +1,6 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
-import { Toolbar, AppBar, Typography, makeStyles, Container, Button, IconButton} from "@material-ui/core";
+import { Toolbar, AppBar, Typography, makeStyles, Container, Button} from "@material-ui/core";
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 
@@ -34,7 +34,7 @@ const useStyles = makeStyles({
 
 const MenuBar = ({ children }) => {
     const classes = useStyles();
-    const [value, setValue] = React.useState(0);
+    const [value] = React.useState(0);
 
     function a11yProps(index) {
         return {

@@ -5,7 +5,7 @@ import Footer from "../components/Footer"
 import { ThemeProvider, createMuiTheme } from "@material-ui/core";
 import {mainRoutes} from '../routes';
 import {ReactView} from "../helpers/helper"
-import { Card, makeStyles, CardMedia } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core';
 import headerImage from '../assets/main.jpg'
 
 const useStyles = makeStyles({
@@ -26,7 +26,6 @@ const useStyles = makeStyles({
   },
   title:{
     position: "absolute",
-    width: "5%",
     bottom: "5%",
     left: "17.5%",
     color: "#000",
