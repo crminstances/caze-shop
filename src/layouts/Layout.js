@@ -19,9 +19,10 @@ const useStyles = makeStyles({
     position: "relative",
   },
   media: {
-    height: 700,
+    height: 800,
     width: "100%",
-    objectFit: "cover"
+    objectFit: "cover",
+    filter: "brightness(100%)"
   },
   title:{
     position: "absolute",

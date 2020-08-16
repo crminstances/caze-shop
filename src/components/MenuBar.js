@@ -13,19 +13,21 @@ const useStyles = makeStyles({
 
   },
   brand: {
-    color: `#fff`,
+    color: `#000`,
     textDecoration: `none`,
-    marginRight: 30
+    marginRight: 30,
+    textTransform: "capitalize"
   },
   navButton: {
     textTransform: "none",
-    color: `#fff`,
+    color: `#000`,
   },
   flex:{
-    flexGrow: 1
+    flexGrow: 1,
+    textAlign: "center"
   },
   icon: {
-    color: '#fff'
+    color: '#000'
   },
   appBar:{
     position: "absolute",
@@ -38,20 +40,21 @@ const MenuBar = ({siteTitle, onButtonClick}) => {
   return (
     <>
        <div className={classes.root}>
-       <AppBar className={classes.appBar} color="transparent" elevation={0}>
+       <AppBar className={classes.appBar} color="secondary" elevation={0}>
           <Container maxWidth="lg">
             <Toolbar> 
-              <Typography variant="h4">
-                <Link
+            <Typography variant="h6" component="p">
+              <Link
                   to="/"
                   className={classes.brand}
                 >
-                  {siteTitle}
+                  C A Z E
                 </Link>
-              </Typography>
-              <Button size="large" onClick={() => {onButtonClick('Home')}}  component={Link} to="/" className={classes.navButton}>Home</Button>
+                </Typography>
+              <Typography className={classes.flex} variant="h4" component="p">
+                <Button size="large" onClick={() => {onButtonClick('Home')}}  component={Link} to="/" className={classes.navButton}>Home</Button>
               <Button size="large" onClick={() => {onButtonClick('Products')}} component={Link} to="/products" className={classes.navButton}>Products</Button>
-              <Typography className={classes.flex}></Typography>
+              </Typography>
               <IconButton className={classes.icon}><InstagramIcon/></IconButton>
               <IconButton className={classes.icon}><FacebookIcon/></IconButton>
 
