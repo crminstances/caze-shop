@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import {
   Link
 } from "react-router-dom";
-import { Toolbar, AppBar, Typography, makeStyles, Container, Button} from "@material-ui/core";
+import { Toolbar, AppBar, Typography, makeStyles, Container, Button, IconButton} from "@material-ui/core";
 import InstagramIcon from '@material-ui/icons/Instagram';
 import FacebookIcon from '@material-ui/icons/Facebook';
 
@@ -43,20 +43,20 @@ const MenuBar = ({siteTitle, onButtonClick}) => {
        <AppBar className={classes.appBar} color="secondary" elevation={0}>
           <Container maxWidth="lg">
             <Toolbar> 
-            <Typography variant="h6" component="p">
-              <Link
-                  to="/"
-                  className={classes.brand}
-                >
-                  C A Z E
+              <Typography variant="h6" component="p">
+                <Link
+                    to="/"
+                    className={classes.brand}
+                  >
+                    C A Z E
                 </Link>
-                </Typography>
+              </Typography>
               <Typography className={classes.flex} variant="h4" component="p">
                 <Button size="large" component={Link} to="/" className={classes.navButton}>Home</Button>
-              <Button size="large" component={Link} to="/products" className={classes.navButton}>Products</Button>
+                <Button size="large" component={Link} to="/products" className={classes.navButton}>Products</Button>
               </Typography>
-              <Button href="https://instagram.com/golds.caze" target="_blank" className={classes.icon}><InstagramIcon/></Button>
-              <Button href="https://www.facebook.com/gold.caze" target="_blank" className={classes.icon}><FacebookIcon/></Button>
+              <IconButton href="https://instagram.com/golds.caze" target="_blank" className={classes.icon}><InstagramIcon/></IconButton>
+              <IconButton href="https://www.facebook.com/gold.caze" target="_blank" className={classes.icon}><FacebookIcon/></IconButton>
 
             </Toolbar>
           </Container>
