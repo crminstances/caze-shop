@@ -34,11 +34,7 @@ const useStyles = makeStyles({
 
 const FilterBar = ({ children, page }) => {
     const classes = useStyles();
-    const [value, setValue] = React.useState(0);
-    // const [page, setPage] = React.useState("Home");
-    // const changePageTitle = (title = "Home") => {
-    //   setPage(title);
-    // }
+    const [value] = React.useState(0);
 
     function a11yProps(index) {
         return {
